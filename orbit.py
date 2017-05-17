@@ -21,11 +21,11 @@ for a in [giant, dwarf]:
 dt = 0.02
 G = 1
 while 1:
-    rate(400)
+    rate(100)
     dist = dwarf.pos - giant.pos
     force = G * giant.mass * dwarf.mass * dist / mag(dist)**3
     giant.p = giant.p + force*dt
-    dwarf.p = dwarf.p + force*dt
+    dwarf.p = dwarf.p - force*dt
     
     for a in [giant, dwarf]:
         a.pos = a.pos + a.p/a.mass * dt
